@@ -1,0 +1,11 @@
+CALISTIRMA
+1. npm install
+2. npm start
+
+KURULUM DOSYASI (.exe)
+yukleyici-olustur.bat dosyasina cift tikla. Bitince dist klasorunde kurulum dosyasi olusur.
+
+OVERLAY
+Alt+C (Ayarlardan degistirilebilir) sag ustte kucuk bir overlay acar/kapatir.
+Oyundan odagi calmaz. Overlay'e tiklayip tum menulerde gezebilirsin (Ayarlardan tiklamalari oyuna gecirmeyi secebilirsin).
+Overlay'in gorunmesi icin Valorant Pencereli Tam Ekran modunda olmali.

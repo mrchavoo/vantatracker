@@ -1,0 +1,23 @@
+name: Release
+
+# "v1.0.1" gibi bir etiket gonderildiginde Windows kurulum dosyasini uretir ve GitHub Releases'a yayinlar.
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+      - run: npx electron-builder --win nsis --publish always
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

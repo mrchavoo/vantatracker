@@ -1,0 +1,57 @@
+{
+  "name": "vantatracker",
+  "version": "1.0.0",
+  "description": "VantaTracker - Valorant tracker",
+  "author": "VantaTracker",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis",
+    "release": "electron-builder --win nsis --publish always"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "com.vantatracker.app",
+    "productName": "VantaTracker",
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "package.json",
+      "assets/**"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "installerHeaderIcon": "build/icon.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "artifactName": "VantaTracker-Setup-${version}.${ext}"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "mrchavoo",
+        "repo": "vantatracker",
+        "releaseType": "release"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrchavoo/vantatracker.git"
+  },
+  "homepage": "https://github.com/mrchavoo/vantatracker",
+  "dependencies": {
+    "electron-updater": "^6.3.0"
+  }
+}
