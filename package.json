@@ -41,16 +41,12 @@
       {
         "provider": "github",
         "owner": "mrchavoo",
-        "repo": "vantatracker",
+        "repo": "vantatracker-releases",
         "releaseType": "release"
       }
     ]
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mrchavoo/vantatracker.git"
-  },
-  "homepage": "https://github.com/mrchavoo/vantatracker",
+  "homepage": "https://github.com/mrchavoo/vantatracker-releases",
   "dependencies": {
     "electron-updater": "^6.3.0"
   }

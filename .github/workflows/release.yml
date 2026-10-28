@@ -1,23 +1,28 @@
 name: Release
 
-# "v1.0.1" gibi bir etiket gonderildiginde Windows kurulum dosyasini uretir ve GitHub Releases'a yayinlar.
+# "v1.0.1" gibi bir etiket gonderildiginde Windows kurulum dosyasini uretir ve
+# herkese acik "vantatracker-releases" deposunda yayinlar. Kaynak kod bu depoda gizli kalir.
 on:
   push:
     tags:
       - 'v*'
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   build:
     runs-on: windows-latest
+    env:
+      GH_TOKEN: ${{ secrets.RELEASES_TOKEN }}
     steps:
+      - name: Anahtar var mi?
+        shell: pwsh
+        run: |
+          if (-not $env:GH_TOKEN) { Write-Error "RELEASES_TOKEN gizli anahtari eklenmemis. Settings > Secrets and variables > Actions bolumunden ekle."; exit 1 }
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
       - run: npm install
       - run: npx electron-builder --win nsis --publish always
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

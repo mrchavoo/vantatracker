@@ -3,7 +3,7 @@
 A desktop Valorant companion: live match lobby (ranks, peak, win rate, last games, skins), your store and night market,
 missions and inventory, stats, match history and a crosshair library. English, Türkçe and Español.
 
-**Download:** https://github.com/mrchavoo/vantatracker/releases/latest  
+**Download:** https://github.com/mrchavoo/vantatracker-releases/releases/latest  
 Run the installer; the app checks GitHub for new versions and offers to update itself.
 
 ## How it works
