@@ -14,16 +14,6 @@ The Riot Client's local interface is **not officially supported by Riot Games**,
 ## Hotkey
 `Alt+C` (changeable in Settings) shows or hides a small overlay in the top-right corner. Valorant must run in *Windowed Fullscreen* for overlays to be visible.
 
-## Build from source
-```
-npm install
-npm start          # run
-npm run dist       # build the Windows installer into dist/
-```
-
-## Publishing a new version
-Run `surum-yayinla.bat`, enter the version number (e.g. `1.0.1`). It commits, tags `v1.0.1` and pushes; GitHub Actions builds and publishes the installer.
-
 ---
 
 ## Türkçe
